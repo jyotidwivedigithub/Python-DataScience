@@ -1,0 +1,131 @@
+Question 1.Explain class and object with respect of OOPs give a suitable example.
+Answer:- Class-Class is a blueprint or template from which objects are created.example is car,bike ,aeroplain
+         Object-object is a specific instance of a class ehich contains real world entity.For example object of the class can be BMW,
+         Mercades,Jaguar etc.
+    
+Question 2.Name four pillars of OOPs.
+Answer:- Four pillars of OOPs are...1-Inheritance  2-Polymorphism  3-Encapsulation  4-Abstraction
+
+Question 3.Explain why the __init__() function is used.Give a suitable example.
+Answer:- Because  __init__() method lets the class initialize the object attributes and serves no other purpose.It is only used within classe.
+        Example:-
+                class car:
+                     def __init__(self,name):
+                          self.name = name
+                          print("I am ready")
+                            
+                    def product (self):
+                          print("I am not Ready")
+                        return ("Name : " + self.name)
+                
+                c = car("Maruti 800")
+                print(c.product())
+                
+                
+Question 4.Why self is used in OOPs?
+Answer:- The self variable is used to represent the instance of the class which is often used in OOPs . It works as a reference  to the object.
+
+Question 5.What is inheritance ? Give an example for each type of inheritance.
+Answer:- Inheritance is an mechanism in which one class acquires the property of another class.Example-A child inherits the traits of his/her parents
+        Types:-
+           
+             1.Single Inheritance- single inheritance enables a derived class to inherit properties from a single parent class.
+                 Example-
+                        class Parent:
+                            def func1(self):
+                               print("This function is in parent class")
+                                
+                        class child:
+                            def func2(self):
+                               print("This function is in child class")
+                                
+                        object=child()
+                        object.func1()
+                        object.func2()
+                        
+            2.MUltiple Inheritance- When a class can be derived from more than one base class this type of inheritance is calles Multiple Inheritance.
+                Example-
+                        class A:
+                            def displayA(self):
+                                print("Welcome to India A")
+
+                        class B:                             #Single Inheritance
+                            def displayB(self):
+                                print("Welcome to India B")
+                        
+                        class C(A,B):                          #Multiple Inheritance
+                            def displayC(self):
+                                print("Welcome to India C")
+
+                        obj=C()
+                        obj.displayA()
+                        obj.displayB()
+                        obj.displayC()
+
+
+            3.Multilevel Inheritance- In which features of the base class and the derived class are further inherited into the new derived class.
+                     this is similar to a relationship representing a child and a grandfather
+                Example-
+                        class A:
+                            def displayA(self):
+                                print("Welcome to India A")
+
+                        class B(A):                             #Single Inheritance
+                            def displayB(self):
+                                print("Welcome to India B")
+                        
+                        class C(B):                          #Multiple Inheritance
+                            def displayC(self):
+                                print("Welcome to India C")
+
+                        obj=C()
+                        obj.displayA()
+                        obj.displayB()
+                        obj.displayC()     
+                        
+            4.Hierarchial Inheritance- When more than one derived class are created from a single base this type of inheritance is called 
+                     hierarchial inheritance.IN this program we have a parent(base) class and Two child(derived)class.
+                Example-
+                        class Parent:
+                            def func1(self):
+                                print("This function is in Parent class")
+                                
+                        class child1(Parent):
+                            def func2(self):
+                                print("This function is in child1 class")
+                         
+                        class child2(Parent):
+                            def func3(self):
+                                print("This function is in child2 class")
+                        
+                        object1 = child1()
+                        object2 = child2()
+                        object1.func1()
+                        object1.func2()
+                        object2.func1()
+                        object2.func3()
+                        
+            5.Hybrid Inheritance- Inheritance consisting of multiple types of inheritance is called hybrid inheritance.
+               Example-
+                         class Parent:
+                            def func1(self):
+                                print("This function is in Parent class")
+                                
+                        class child1(Parent):
+                            def func2(self):
+                                print("This function is in child1 class")
+                         
+                        class child2(Parent):
+                            def func3(self):
+                                print("This function is in child2 class")
+                                
+                        class child3(child1 ,Parent):
+                            def func4(self):
+                                print("This function is in child3 class")
+                        
+                        object = child3()
+                        object.func1()
+                        object.func2()
+                       
+                      
+                               
