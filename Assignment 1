@@ -1,0 +1,51 @@
+Question 1.Who developed Python Programming Language?
+Answer: Guido Van Rossum.
+
+Question 2.Which type programming does Python support?
+Answer: Object-oriented programming & structured programming.
+
+Question 3.Is Python case sensitive when dealing with identifiers?
+Answer: Yes,Python is case-sensitive language.
+
+Question 4.What is the correct extension of the Python file?
+Answer: .py
+
+Question 5.Is Python code compiled or interpreted?
+Answer: python is a interpreted language
+
+Question 6.Name a few blocks of code used to define in Python language?
+Answer: Indentation and Braces are usd to define a block of code in python
+
+Question 7.State a character used to give single-line comments in Python?
+Answer: #
+    
+Question 8.Mention functions which can help us to find the version of python that we are currently working on?
+Answer: sys.version
+
+Question 9.Python supports the creation of anonymous functions at routime,using a construct called____-
+Answer: Lambda
+
+Question 10.What does pip stand for python?
+Answer: PIP stand for Preferred Installer Program
+
+Question 11.Mention a few built-in functions in python?
+Answer: type(),sum(),max(),range(),len(),min(),int(),str(),float() etc.
+
+Question 12.What is the maximun possible length of an identifier in Python?
+Answer: 79
+
+Question 13.What are the benifits of using Python?
+Answer: Benifit of python are...
+       1-Easy to understand = less development time.
+       2-High level language.
+       3-Portable-Works on linux / windows / mac etc.
+    
+Question 14.How is memory managed in python?
+Answer: Memory in Python is managed by Private heap space. All Python objects and data structures are located in a private heap.
+
+Question 15.How to install Python on windows and set path variables?
+Answer: Python can be easily installed from python.org When you click on the download button, python can be installed right after
+        you complete the setup by executing the file for your platform.
+    
+Question 16.Is indentation required in python?
+Answer: Yes, indentation is use to indicate a block of code in python.
