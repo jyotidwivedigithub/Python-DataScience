@@ -1,0 +1,63 @@
+Que.1:- What is Abstraction in OOps? Explain with an example.
+Ans. Abstraction is the process of hiding the internal details of an application from the outer world
+    for example car
+        class car :
+    def __init__(self, year, make, model, speed):
+        self.__year = year
+        self.__make = make
+        self.__model = model
+        self.__speed = speed
+
+c = car(2022,"maruti",800,70)
+print(c.car_year)
+
+
+
+Que.2:-Differentiate between Abstraction and Encapsulation. Explain with an example.
+Ans. 1-Abstraction is the process of hiding the internal details of an application from the outer world
+    Example-car
+        class car :
+    def __init__(self, year, make, model, speed):
+        self.__year = year
+        self.__make = make
+        self.__model = model
+        self.__speed = speed
+
+c = car(2022,"maruti",800,70)
+print(c.car_year)        
+        
+    2- Encapsulation refers the building of data, along with the methods that operate on that data, into
+      a with the methods that operate on that data, into a single unit.
+    Examle- car  
+        class car :
+    def __init__(self, year, make, model, speed):
+        self.__year = year
+        self.__make = make
+        self.__model = model
+        self.__speed = speed
+
+    def set_speed(self,speed):                    # Invoke a function-Overriding
+        self.__speed = 0 if speed < 0 else speed  # Getter & Setter
+
+    def get_speed(self):
+        return self.__speed
+    
+c = car(2022,"maruti",800,70)
+print(c.set_speed(45))
+print(c.get_speed())
+
+
+
+Que.3:-What is abc module in python? Why is it used?
+Ans.ABC is Abstract Base Classes module in python. It is used to declare a set of methods that must be created in any child class 
+    built on top of this abstract class.
+    
+
+Que.4:-How can we achieve data abstraction?
+Ans.Data abstraction can be achived through creating abstract classes and inheriting them later.
+
+
+Que.5:-Can we create an instance of an abstract class? Explain your answer.
+Ans.Abstract classes cannot be instantiated.but they can be subclassed. When an abstract class is subclassed, the subclass usually provides implementation
+   for all of the abstract methods in its parent class.However, if it does not, then the subclass must also be declared abstract.
+    
