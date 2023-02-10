@@ -1,0 +1,98 @@
+Que.1- Create a vehicle class with an init method having instance variables as name_of_vehicle, max_speed
+       and average_of_vehicle.
+Ans.
+        class  vehicle :
+          def __init__(self, name_of_vehicle,max_speed,average_of_vehicle):
+            self._name_of_vehicle = name_of_vehicle
+            self._max_speed = max_speed
+            self._average_of_vehicle = average_of_vehicle
+
+        c = vehicle("maruti",90,70)
+        print(c._name_of_vehicle)
+        print(c._max_speed)
+        print(c._average_of_vehicle)
+    
+
+
+Que.2-Create a child class car from the vehicle class created in Que 1, which will inherit the vehicle class.
+      Create a method named seating_capacity which takes capacity as an argument and returns the name of
+      the vehicle and its seating capacity.
+Ans.
+    class vehicle :
+          def __init__(self, name_of_vehicle,max_speed,average_of_vehicle):
+            self._name_of_vehicle = name_of_vehicle
+            self._max_speed = max_speed
+            self._average_of_vehicle = average_of_vehicle
+
+    class child(vehicle):
+         def __init__(self,seating_capacity):
+            self.seating_capacity = seating_capacity
+             
+    obj=child(56)
+    print(obj.seating_capacity)
+    
+
+Que.3-What is multiple inheritance? Write a python code to demonstrate multiple inheritance.
+Ans.MUltiple Inheritance- When a class can be derived from more than one base class this type of inheritance is calles Multiple Inheritance.
+                Example-
+                        class A:
+                            def displayA(self):
+                                print("Welcome to India A")
+
+                        class B:                             #Single Inheritance
+                            def displayB(self):
+                                print("Welcome to India B")
+                        
+                        class C(A,B):                          #Multiple Inheritance
+                            def displayC(self):
+                                print("Welcome to India C")
+
+                        obj=C()
+                        obj.displayA()
+                        obj.displayB()
+                        obj.displayC()
+
+Que.4- What are getter and setter in python? Create a class and create a getter and a setter method in this
+       class. 
+Ans. Getter-The method used in OOPS which helps to access the private attributes from a class.
+     Setter-The method used in OOPS feature which helps to set the value to private attribute in a class.
+       
+        class car :
+            def __init__(self, year, make, model, speed):
+                self.__year = year
+                self.__make = make
+                self.__model = model
+                self.__speed = speed
+
+            def set_speed(self,speed):                    # Invoke a function-Overriding
+                self.__speed = 0 if speed < 0 else speed  # Getter & Setter
+
+            def get_speed(self):
+                return self.__speed
+    
+        c = car(2022,"maruti",800,70)
+        print(c.set_speed(45))
+        print(c.get_speed())
+        
+        
+Que.5-Q5.What is method overriding in python? Write a python code to demonstrate method overriding.
+Ans. Overriding in Python-When you have two method with the same name that each perform different 
+     task is called overriding method.
+     
+        class A:
+            def displayA(self):
+            print("Welcome to India A")
+
+        class B:                             
+            def displayB(self):
+            print("Welcome to India B")
+                        
+        class C(A,B):                         
+            def displayC(self):
+            print("Welcome to India C")
+
+        obj=C()
+        obj.displayA()
+        obj.displayB()
+        obj.displayC()
+    
