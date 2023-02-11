@@ -1,0 +1,100 @@
+Que.1-Which function is used to open a file? What are the different modes of opening a file? Explain each mode
+      of file opening.
+Ans. open() Function- The open() function opens a file, and returns it as a file object. 
+   
+    * Different modes of opening a file:---
+          Write Files :-
+            f = open("test.txt", 'w')
+            print(f.write)
+    
+          Read Files :-
+            data = open("text.txt",'r')
+    
+          Write Files :-
+            with open("new.txt", "w") as f:
+            print(f.write())
+    
+          Open Files using With
+            with open("new.txt", "r") as f:
+            print(f.read())
+    
+
+Que.2-Why close() function is used? Why is it important to close a file?
+Ans. Close() function- The close() function is used to close an open file.A file needs to be closed 
+     after a read or write operation to release the memory allocated by the program.
+    
+Que.3-Write a python program to create a text file. Write ‘I want to become a Data Scientist’ in that file. Then
+     close the file. Open this file and read the content of the file. 
+Ans. 
+     Write Python Program :-
+            f = open("test.txt", 'w')
+            print(f.write)
+            
+    Write File :-
+            f.write(‘I want to become a Data Scientist’)
+            f.close
+     
+    Open File :-
+            f = open("test.txt", 'w')
+        
+    Read the content of file :-
+            d = open("text.txt",'r')
+            print(d.read)
+            
+
+
+Que.4- Explain the following with python code: read(), readline() and readlines().
+Ans.  
+     Write Python Program :-
+            f = open("test.txt", 'w')
+            print(f.write)
+            f.close
+            
+            d = open("text.txt",'r')
+            
+    1- Read()-The read() method returns the specified number of bytes from the file
+            print(d.read)
+        
+    
+    2- Readline()-Python readline() method will return a line from the file when called.
+            print(d.readline())
+    
+    3- Readlines()-The readlines() method returns a list containing each line in the file as a list item.
+            print(d.raadlines())
+        
+
+Que.5- Explain why with statement is used with open(). What is the advantage of using with statement and
+       open() together?
+Ans.  
+     The with statement works with the open() function to open a file
+        
+        Write Python Program :-
+            f = open("test.txt", 'w')
+            print(f.write)
+            f.close
+            
+            with open("new.txt", "r") as f:
+            print(f.read())
+    
+    Advantage of using with statement and open() togather-Using with means that the file will be closed as soon as you leave the block. This is beneficial because 
+        closing a file is something that can easily be forgotten and ties up resources that you no longer need   
+    
+
+Que.6- Explain the write() and writelines() functions. Give a suitable example.
+Ans.
+     Write() Function- The write() method writes a specified text to the file.
+            f = open("test.txt", 'w')
+            print(f.write)
+            f.close  
+    
+    Writelines() Function- The writelines() method writes the items of a list to the file. Where the texts will be inserted depends on the file mode and 
+                        stream position.
+                f = open("test.txt", 'w')
+                n = []
+                for i in range(5):
+                    name = input("Enter name of employee")
+                    n.append(name)
+                    
+                f.writelines(n)
+                f.close()
+                print("I want to become a doctor.")
