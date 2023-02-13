@@ -1,0 +1,112 @@
+Que.1 What is an Exception in pthon? Write the difference between Exceptions and syntax errors.
+Ans. Exception in Python- An exception is an event, which occurs during the execution of a program that disrupts the normal flow of the program's instructions.
+     while  Python SyntaxError occurs when the interpreter encounters invalid syntax in code. 
+    
+
+Que.2 What happens when an exception is not handled? Explain with an example.
+Ans.  If an exception is not caught (with a catch block), the runtime system will abort the program (i.e. crash) and an exception message will print to the console.
+     Example:
+        f = open("test.txt" , "r")
+        print("this is my print")             
+
+It will return error , for handling error  we use given exception handling blocks.
+        try :
+            f = open("test.txt" , "r")
+        except Exception as e :               
+            print("this is my print" , e)
+            
+        try :
+            f = open("test.txt" , "r")
+            f.write("write into my file" )
+            f.close()
+        except Exception as e :               
+            print("this is my print" , e)    
+
+    
+Que.3 Which Pthon statements are used to catch and handle exceptions? Explin with an example. 
+Ans. The try and except block in Python is used to catch and handle exceptions.
+      Example:
+        f = open("test.txt" , "r")
+        print("this is my print")    
+         
+        try :
+            f = open("test.txt" , "r")
+        except Exception as e :               
+            print("this is my print" , e)
+            
+        try :
+            f = open("test.txt" , "r")
+            f.write("write into my file" )
+            f.close()
+        except Exception as e :               
+            print("this is my print" , e)  
+            
+            
+            
+Que.4  Explain with an example:
+        a. try and else
+        b. finally
+        c. raise
+Ans.  1.try and else - The try block lets you test a block of code for errors  and  else block lets you execute code when there is no error.
+               Example: 
+                        try :
+                            f = open("test.txt" , "r")
+                            f.write("write into my file" )
+                        except Exception as e :               
+                            print("this is my print" , e)
+                        else :
+                            f.close()
+                            print("this will be executed once your try will execute without error")
+    
+    
+Que.5  What are Custom Exceptions in python? Why do we need Custom Exceptions? Explain with an example.
+Ans.  Custom Exception- A custom exception is a user-defined exception that is created to handle specific errors or exceptional situations in a program.
+      Need of custom exception- Using custom exceptions can make your code more readable and maintainable, as it makes it easier to understand why an exception was raised and how it should be handled.
+      Example:
+            age = int(input("enter your age"))
+             print(age)
+
+        if age is negative.. it will be error for system so for handling this error we use custom function
+           
+            class validateage(Exception) :
+                def __init__(self, msg) :
+                self.msg = msg
+                
+                def validateage(age) :
+                     if age < 0 :
+                        raise validateage("entered age is negative" )
+                    elif age > 200 :
+                        raise validateage("enter age is very very high" )
+                    else :
+                        print("age is valid" )
+               
+            try :
+                age = int(input("enter your age"))
+                validateage(age)
+            except validateage as e :
+                print(e)
+                
+                
+Que.6 Crete a custom exception class. Use this class to handle an exception.
+Ans.  age = int(input("enter your age"))
+             print(age)
+
+        if age is negative.. it will be error for system so for handling this error we use custom function
+           
+            class validateage(Exception) :
+                def __init__(self, msg) :
+                self.msg = msg
+                
+                def validateage(age) :
+                     if age < 0 :
+                        raise validateage("entered age is negative" )
+                    elif age > 200 :
+                        raise validateage("enter age is very very high" )
+                    else :
+                        print("age is valid" )
+               
+            try :
+                age = int(input("enter your age"))
+                validateage(age)
+            except validateage as e :
+                print(e)
