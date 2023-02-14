@@ -1,0 +1,107 @@
+Que.1 Explain why we have to use the Exception class while creating a Custom Exception.
+Ans. In Python, the Exception class is the base class for all built-in exceptions. When creating a custom exception, it is recommended to inherit from the.
+     Exception class to ensure that the new exception has all
+     the functionality of a standard exception.
+
+
+Que.2 Write a python program to print Python Exception Hierarchy.
+Ans. try :
+        f = open("test.txt" , "r")
+        f.write("write into my file" )
+    except Exception as e :               
+        print("this is my print" , e)
+    else :
+        f.close()
+        print("this will be executed once your try will execute without error")
+        
+
+Que.3 What errors are defined in the ArithmeticError class? Explain any two with an example.
+Ans. The ArithmeticError class in Python represents errors that occur during arithmetic operations. There are some arithmetic errors are....
+          1.ZeroDivisionError 2.FileNotFoundError 3.ValueError 4.TypeError
+          5.IndexError 6.AttributeError 7.ImpotError 8.KeyError....etc
+    
+    1.ZeroDivisionError- this error  raised when trying to divide a number by zero.
+        Example:
+            try :
+                10/0
+            except ZeroDivisionError as e :
+                print(e)
+                
+    2.ValueError- ValueError is a built-in Python exception that is  raised when a function or operation receives an argument with the correct
+                 type but an inappropriate value. 
+         Example:
+            try :
+                int("Khushbu")
+            except (ValueError , TypeError) as e:
+                print(e)
+                
+                
+Que.4 Why LookupError class is used? Explain with an example KeyError and IndexError.
+Ans. LookupError class is used because  it allows you to catch any of these specific exceptions in a single except block.
+    Example:
+        
+        1.KeyError: try :
+                       d ={ "key" : "riya" , "l" :[3,5, 2] }
+                       print(d ["key2"])
+                    except LookupError as e:
+                        print(e)
+                        
+        2.IndexError: try :
+                         l = [2,4,6,8]
+                         print(l[6])
+                      except LookupError as e:
+                            print(e
+                   
+  
+Que.5 Explain ImportError. What is ModuleNotFoundError. 
+Ans. ImportError- ImportError is a built-in Python exception that is raised when an import statement fails to import a module or a specific 
+                attribute from a module.   
+     ModuleFoundError- if we try to import a module named 'my_modules', since this module does not exist, Python raises a 'ModuleNotFoundError',
+                which is a subclass of 'ImportError' .
+                                  
+                                  
+Que.6 List down some best practices for exception handling in python.
+Ans.    List of Exception Handling ....
+                    
+         try :
+            a = 20/0
+         except ZeroDivisionError as e:
+            print(e)
+
+    
+         try :
+            int("Khushbu")
+         except (ValueError , TypeError) as e:
+            print(e)
+
+
+         try :
+            int("Koyal")
+         except :
+             print("this will catch an Error") 
+                             
+         
+         try :
+            d = {"key":"sudha", "l":[2,4,6,8]}
+            print(d["key2"])
+         except KeyError as e:
+            print(e)
+
+
+         try :
+            "deepa".test()
+         except AttributeError as e:
+            print(e)
+
+
+         try :
+            l=[2,4,6,8,5,3]
+            print(l[6])
+         except IndexError as e:
+            print(e)
+
+
+        try :
+            123 + "Gita"
+        except TypeError as e:
+            print(e)
