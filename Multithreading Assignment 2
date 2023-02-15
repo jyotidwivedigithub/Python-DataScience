@@ -1,0 +1,73 @@
+Que.1 What is multithreading in python? Why is it used? Name the module used to handle threads in python.
+Ans. Multithreading- Multithreading refers to concurrently executing multiple threads by rapidly switching the control 
+     of the CPU between threads. It is used because it  allows the execution of multiple parts of a program at the same time.
+    Threading  module is used to handle thread in Python.
+    
+
+Que.2 Why threading module used? Write the use of the following functions
+        1. activeCount()
+        2. currentThread()
+        3. enumerate()
+        
+Ans. Threading Module-    Threading  module is used to handle thread in Python.
+        1. activeCount()- The activeCount() method of thread class is used to return the number of active threads in the current
+                          thread's thread group.
+        2. currentThread()- The currentThread() method of thread class is used to return a reference to the currently executing 
+                          thread object.
+        3. enumerate()- Enumerate() method adds a counter to an iterable and returns it in a form of enumerating object.
+        
+
+Que.3 Explain the following functions:
+        1.run()
+        2.start()
+        3.join()
+        4.isAlive()
+Ans.
+    1.run()- To run a function in a separate thread using the threading module in Python, we can create a Thread object and pass 
+              the function to it.
+    2.start()- after creating thread we can start i by calling start() function.
+    3.join()- The join() method is used to wait for a thread to complete its execution.
+    4.isAlive()- isAlive method is used to check if the thread is still running or if it has finished its execution and exited.
+
+
+Que.4 Write a python program to create two threads. Thread one must print the list of squares and thread
+      two must print the list of cubes.
+Ans. 
+    import threading
+    
+    def print_squares():
+            for i in range(1,11):
+                print(f"square of {i} is {i**2}")
+                
+    def print_cubes():
+            for i in range(1,11):
+                print(f"cube of {i} is {i**3}")
+                
+    thread1 = threading.Thread(target=print_squares)
+    thread2 = threading.Thread(target=print_cubes)
+    
+    thread1.start()
+    thread2.start()
+    
+    thread1.join()
+    thread2.join()
+    
+    print("Main thread has finished")
+    
+    
+
+Que.5 State advantages and disadvantages of multithreading.
+Ans. Advantages of Multithreading- 1.It can improve the performance of program by utilize available CPU
+                   resources more efficiently.
+                  2. Multithreading can make a program easier to design and maintain by allowing developers to separate the
+                   functionality of the program into multiple threads.
+            
+    Disadvantage of Multithreading- 1. Multithreading can increase the complexity of a program by introducing issues related 
+                  to thread synchronization and communication.
+                  2.Multithreaded programs can be more difficult to debug than single-threaded programs.
+            
+            
+Que.6 Explain deadlocks and race conditions.
+Ans. Deadlock- Deadlocks can be prevented or resolved by careful design of the program and the use of synchronization mechanisms such as locks, semaphores, and monitors.
+     Race Condition- A race condition occurs when two or more threads access a shared resource simultaneously, and the result of the access depends on the order in which 
+                    the threads execute.
