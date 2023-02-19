@@ -1,0 +1,36 @@
+Q1. What is an API? Give an example, where an API is used in real life.
+Ans. API- APIs are used in web applications to connect user-facing front ends with critical back-end functionality and data.
+     APIs are used to deliver material by streaming services such as Spotify and Netflix.
+    
+    
+Q2. Give advantages and disadvantages of using API.
+Ans. Advantage- 1.Quicker Release. GUI tests have a reputation for taking longer to release products. 
+                2.Better Test Coverage. 
+                3.Ease to Shift Left. 
+                4.Faster Bug Fixes. 
+                5.Reduced Testing Costs. 
+    Disadvantage- 1.API load testing does not simulate real users interacting with elements of your webpage.
+‌                  2.It doesn't measure front-end performance or how quickly pages render in different browsers.
+                  3.It doesn't give you an idea of how user-friendly your application is. 
+
+Q3. What is a Web API? Differentiate between API and Web API.
+Ans. Web API- A Web API is an application programming interface for the Web. A Browser API can extend the functionality of a web browser.
+     Differences- 1.Both APIs and web services are technologies that enable the transfer of data between separate software applications. 
+                   API is an interface that exposes an application's data to outside software, whereas web applications are one type of
+                   API with stricter requirements.
+                  2.Web service is used for REST, SOAP, and XML-RPC for communication, while API is used for any style of communication.
+                  
+                    
+Q4. Explain REST and SOAP Architecture. Mention shortcomings of SOAP.
+Ans. REST and SOAP Architecture- Representational State Transfer (REST) is a software architecture style for building scalable web services.
+          REST services typically communicate via HTTP and are built using XML and JSON. 
+         Simple Object Access Protocol (SOAP) is a protocol specification for exchanging structured information to implement web services. 
+        
+        
+Q5. Differentiate between REST and SOAP.
+Ans. 1.SOAP stands for Simple Object Access Protocol whereas REST stands for Representational State Transfer.
+     2.SOAP is a protocol whereas REST is an architectural pattern.
+     3.SOAP uses service interfaces to expose its functionality to client applications while REST uses Uniform Service locators to access to 
+        the components on the hardware device.
+    4.SOAP needs more bandwidth for its usage whereas REST doesn’t need much bandwidth.
+    5.SOAP cannot make use of REST whereas REST can make use of SOAP.
