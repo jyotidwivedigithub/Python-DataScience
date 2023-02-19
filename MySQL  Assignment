@@ -1,0 +1,78 @@
+Q1. What is a database? Differentiate between SQL and NoSQL databases.
+Ans. Database- A database is an organized collection of data that is stored and accessed electronically. 
+               It provides a way to manage, store, and retrieve data efficiently.
+    SQL(Structured Query Language) and NoSQL (Not only SQL) are two different types of databases with different data models, 
+    structures, and methods of querying data.
+
+    SQL- databases are based on the relational model, which organizes data into tables with predefined columns and rows. 
+        These databases use SQL, a declarative language for managing and querying data, and ensure data consistency, integrity, and atomicity.
+        Examples of SQL databases include Oracle, MySQL, and PostgreSQL.
+
+    NoSQL- databases, on the other hand, do not follow the traditional tabular structure of SQL databases. Instead, they use various data models,
+        such as key-value, document, graph, or column-family, to store and manage data. These databases are designed to handle large volumes of 
+        unstructured or semi-structured data and provide high scalability, availability, and performance. Examples of NoSQL databases include MongoDB,
+        Cassandra, and Redis.
+        
+
+Q2. What is DDL? Explain why CREATE, DROP, ALTER, and TRUNCATE are used with an example.
+Ans. DDL- DDL stands for data difinition language. DDL commands helps define database schema.
+    CREATE- Create commands is used to create database and object in SQL.
+             e.g.- CREATE DATABASE db1;
+                   CREATE TABLE student;
+    DROP- DROP commands is used to delete existing SQL database.
+             e.g.- DROP TABLE student ;
+    ALTER- ALTER commands is used to add,delete,or modify column in existing column.
+             e.g.- ALTER TABLE student ADD c1,c1,c3;
+                   ALTER TABLE student DROP c3;
+          
+
+Q3. What is DML? Explain INSERT, UPDATE, and DELETE with an example.
+Ans. DML- DML commands deals with the manipulation of data present in database.
+     INSERT- insert allows to insert new data in the database table.
+             e.g- INSERT INTO student(c1,c2,c3)
+                  VALUES("Riya", 43,65)
+    UPDATE- it allows us to update and manupulate existing data.
+            e.g.- UPDATE student (ci ="Kumar", c2=45, c3= 89)
+    DELETE- Delete allows us to delete single or multiple record from existing database table.
+            e.g.- DELETE from student where c3 >67 ;
+        
+    
+Q4. What is DQL? Explain SELECT with an example.
+Ans. DQL commands are used to make various queries in information systems and databases.
+     SELECT- select statement is used to select data from database.
+           e.g.- SELECT * FROM TABLE student;
+        
+        
+Q5. Explain Primary Key and Foreign Key.
+Ans. Primary Key- The PRIMARY KEY constraint uniquely identifies each record in a table. Primary 
+                  keys must contain UNIQUE values, and cannot contain NULL values.
+    Foreign Key- A FOREIGN KEY is a field in one table, that refers to the PRIMARY KEY in another table.
+         
+        
+Q6. Write a python code to connect MySQL to python. Explain the cursor() and execute() method.
+Ans. Python code to connect MySQL to Python-
+                          import mysql.connector
+                          mydb = mysql.connector.connect(
+                          host="localhost",
+                          user="abc",
+                          password="password"
+                          )
+
+                          mycursor = mydb.cursor()
+                          mycursor.execute(" CREATE DATABASE if not exists table2 ")
+                          mydb.close()
+                    
+    Cursor()- A cursor in SQL Server is a database object that allows us to retrieve each row at a time 
+              and manipulate its data. A cursor is nothing more than a pointer to a row.   
+    Execute()- The execute command is used to execute a stored procedure.
+    
+
+Q7. Give the order of execution of SQL clauses in an SQL query.
+Ans. The order in which the clauses in queries are executed is as follows:
+    1. FROM/JOIN: The FROM and/or JOIN clauses are executed first to determine the data of interest.
+    2. WHERE: The WHERE clause is executed to filter out records that do not meet the constraints.
+    3. GROUP BY: The GROUP BY clause is executed to group the data based on the values in one or more columns.
+    4. HAVING: The HAVING clause is executed to remove the created grouped records that don’t meet the constraints.
+    5. SELECT: The SELECT clause is executed to derive all desired columns and expressions.
+    6. ORDER BY: The ORDER BY clause is executed to sort the derived values in ascending or descending order.
+    7. LIMIT/OFFSET: Finally, the LIMIT and/or OFFSET clauses are executed to keep or skip a specified number of rows.
