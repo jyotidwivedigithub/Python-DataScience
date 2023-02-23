@@ -1,0 +1,87 @@
+Q1. What is Flask Framework? What are the advantages of Flask Framework?
+Ans. Flask -Flask is a web framework, it’s a Python module that lets you develop web applications easily. 
+     Flask Framework- Flask is a web framework. This means flask provides you with tools, libraries and technologies that allow you to
+              build a web application. This web application can be some web pages, a blog, a wiki or go as big as a web-based calendar 
+              application or a commercial website.
+    Advantage of Flask- 1.The Flask framework is easy to understand, that is why it is best for beginners.
+            2.The Flask framework is easy to understand, that is why it is best for beginners.
+            3.Using Flask for web development allows for unit testing through its integrated support, built-in development server, 
+                 fast debugger, and restful request dispatching.
+            4.It is lightweight to enable you to transit into a web framework easily with some extension.
+            
+            
+Q2. Create a simple Flask application to display ‘Hello World!!’. Attach the screenshot of the output in
+Jupyter Notebook.
+Ans.   
+    Creating API....
+        from flask import Flask
+        app = Flask(__name__)
+
+        @app.route("/")
+        def hello_world():
+            return "<h1>Hello, World!</h1>"
+    
+        if __name__=="__main__":
+        app.run(host="0.0.0.0")
+        
+    Oueput....
+         [Running] python -u "/config/workspace/app.py"
+         * Serving Flask app 'app'
+         * Debug mode: off
+         [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+         * Running on all addresses (0.0.0.0)
+         * Running on http://127.0.0.1:5000
+         * Running on http://172.18.0.4:5000
+         [33mPress CTRL+C to quit[0m 
+    
+    
+Q3. What is App routing in Flask? Why do we use app routes?
+Ans. App Routing- App Routing means mapping the URLs to a specific function that will handle the logic for that URL.
+      Modern web frameworks use more meaningful URLs to help users remember the URLs and make navigation simpler. 
+      Example: In our application, the URL (“/”) is associated with the root URL.
+        
+        
+Q4. Create a “/welcome” route to display the welcome message “Welcome to ABC Corporation” and a “/”
+  route to show the following details:
+  Company Name: ABC Corporation
+  Location: India
+  ontact Detail: 999-999-9999
+  Attach the screenshot of the output in Jupyter Notebook.
+
+Ans.  from flask import Flask
+
+      app = Flask(__name__)
+
+      @app.route('/welcome')
+      def welcome():
+         return 'Welcome to ABC Corporation'
+
+      @app.route('/')
+      def company_info():
+      return 'Company Name: ABC Corporation,Location: India,Contact Detail: 999-999-9999'
+
+      if __name__ == '__main__':
+        app.run(host="0.0.0.0")
+                                    
+ Output...
+      [Running] python -u "/config/workspace/app.py"
+       * Serving Flask app 'app'
+       * Debug mode: off
+      Address already in use
+      Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+      [Done] exited with code=1 in 0.22 seconds                              
+
+                                    
+Q5. What function is used in Flask for URL Building? Write a Python code to demonstrate the working of the
+url_for() function.
+Ans. The url_for() function is used for dynamically building a URL for a specific function. The function 
+    accepts the name of a function as first argument, and one or more keyword arguments, each corresponding to 
+    the variable part of URL.
+    
+    from flask import url_for, Flask
+    appFlask = Flask(__name__)
+    @appFlask.route('/home')
+    def home():
+        return 'We are in Home Page!'
+    with appFlask.test_request_context():
+        print(url_for('login'))
