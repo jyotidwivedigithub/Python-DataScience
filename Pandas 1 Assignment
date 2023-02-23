@@ -1,0 +1,86 @@
+Q1. Create a Pandas Series that contains the following data: 4, 8, 15, 16, 23, and 42. Then, print the series.
+Ans.    import pandas as pd
+        x = [4,8,15,16,23,42]
+        var = pd.series(x)
+        print(var)
+        
+        
+Q2. Create a variable of list type containing 10 elements in it, and apply pandas.Series function on the
+variable print it.
+Ans.    import pandas as pd
+        x1 = [1,2,3,4,5,6,7,8,9,10]
+        var1 = pd.series(x1)
+        print(var1)
+
+
+Q3. Create a Pandas DataFrame that contains the following data:
+Then, print the DataFrame.
+Ans. 
+    import pandas as pd
+
+    data = {
+         'name': ['Alice', 'Bob', 'Claire'],
+         'age': [25, 30, 27],
+         'gender': ['Female', 'Male', 'Female']
+  
+    }
+
+    df = pd.DataFrame(data)
+    print(df)
+
+
+Q4. What is ‘DataFrame’ in pandas and how is it different from pandas.series? Explain with an example.
+Ans. DataFrame is a two-dimensional labeled data structure with columns of different types.
+     
+    Series is a one-dimensional labeled array that can hold data of any type, while a DataFrame is a 
+    two-dimensional labeled array that is made up of multiple Series objects and can hold columns of 
+    different data types.
+    Example:
+        DataFrame- import pandas as pd
+                   l=[1,2,3,4]
+                   var=pd.DataFrame(l)
+                   print(var)
+        
+        DataSeries- import pandas as pd
+                    l=[1,2,3,4]
+                    var=pd.series(l)
+                    print(var)
+                    
+                    
+Q5. What are some common functions you can use to manipulate data in a Pandas DataFrame? Can
+you give an example of when you might use one of these functions?
+Ans. There are many functions available in Pandas to manipulate data in a DataFrame. Here are some of 
+     the most common ones...
+    Example:   
+                      import pandas as pd
+                      df = pd.read_csv("p2.csv")
+    
+    1.'df.head'-      df.head()
+    2.'df.tail'-      df.tail()
+    3.'type'-         type(df)
+    4.'df.column'-    df.columns()
+    5.'df.dtype'-     df.dtypes()
+    6.'df.index'-     df.index()
+    
+    
+Q6. Which of the following is mutable in nature Series, DataFrame, Panel?
+Ans. Series, DataFrame and Panel all are mutable in nature.
+
+
+Q7. Create a DataFrame using multiple Series. Explain with an example.
+Ans. 
+    import pandas as pd
+
+    # create a Series for the first column
+    name = pd.Series(['Alice', 'Bob', 'Charlie', 'David'])
+
+    # create a Series for the second column
+    age = pd.Series([25, 30, 35, 40])
+
+    # create a Series for the third column
+    gender = pd.Series(['female', 'male', 'male', 'male'])
+
+    # create the DataFrame by passing a dictionary of Series objects
+    df = pd.DataFrame({'Name': name, 'Age': age, 'Gender': gender})
+
+    print(df)
