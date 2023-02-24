@@ -1,0 +1,35 @@
+import requests
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
+import logging
+import os
+
+save_dir = "images/"
+if not os.path.exists(save_dir):
+    os.makedirs(save_dir)
+    
+headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0;  Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"}
+
+query = "elon musk"
+response = requests.get("https://www.google.com/search?q=elon+musk&rlz=1C1GCEB_enIN1020IN1020&sxsrf=AJOqlzWJ703yayG8d5DIFoGq1fRUBTZSpw:1677240189464&source=lnms&tbm=isch&sa=X&sqi=2&ved=2ahUKEwjSqsjNjq79AhWI6zgGHYLXDq8Q0pQJegQIBBAE&biw=1536&bih=746&dpr=1.25")
+response
+response.content
+
+BeautifulSoup(response.content,"html.parser")
+soup = BeautifulSoup(response.content,"html.parser")
+soup.find_all("img")
+image_tags = soup.find_all("img")
+del image_tags[0]
+len(image_tags)
+
+
+image_data_mongo = []
+for i in image_tags:
+    image_url = i['src']
+    image_data = requests.get(image_url).content
+    mydict = {"index" : image_url , "image" : image_data}
+    image_data_mongo.append(mydict)
+    with open(os.path.join(save_dir,f"{query}_{image_tags.index(i)}.jpg") , "wb") as f :
+                           f.write(image_data)
+    
+image_data_mongo
