@@ -1,0 +1,152 @@
+Q1. List any five functions of the pandas library with execution.
+Ans. 5- functions are .....
+         1.read_csv(): This function is used to read data from a CSV file and create a DataFrame object from it.
+                e.g.- import pandas as pd
+                      df = pd.read_csv(("p2.csv")
+                      print(df.head())
+                                       
+         2.df.tail: This statement returns the last five rows of the DataFrame df.
+                e.g.- import pandas as pd
+                      df = pd.read_csv(("p2.csv")
+                      print(df.head())
+                      print(df.tail())
+                                       
+         3.df.dtypes: This statement returns the data types of each column in the DataFrame df.
+                e.g.- import pandas as pd
+                      df = pd.read_csv(("p2.csv")
+                      print(df.head())
+                      print(df.dtypes())
+                                       
+         4.df.columns: It  is used to select a single column from the DataFrame df based on the column name.
+                e.g.- import pandas as pd
+                      df = pd.read_csv(("p2.csv")
+                      print(df.head())
+                      print(list(df.columns))
+                                       
+         5.df.describe: This statement returns a summary of descriptive statistics for each column in the DataFrame df.
+                e.g.- import pandas as pd
+                      df = pd.read_csv(("p2.csv")
+                      print(df.head())                       
+                      print(df.describe())
+                                       
+                                       
+Q2. Given a Pandas DataFrame df with columns 'A', 'B', and 'C', write a Python function to re-index the
+    DataFrame with a new index that starts from 1 and increments by 2 for each row.
+Ans.  
+      import pandas as pd
+      df = pd.DataFrame([1,2,3],index=['A','B','C'])                                  
+    
+      def reindex_dataframe(df):
+       # Reset the index of the DataFrame to a new index starting from 0
+             df = df.reset_index(drop=True)
+       # Set the new index values by multiplying the row number by 2 and adding 1
+             df.index = (df.index * 2) + 1
+             return df
+      
+      new_df = reindex_dataframe(df) 
+      print(new_df)
+                                       
+                                       
+Q3. You have a Pandas DataFrame df with a column named 'Values'. Write a Python function that
+    iterates over the DataFrame and calculates the sum of the first three values in the 'Values' column. The
+    function should print the sum to the console.
+    For example, if the 'Values' column of df contains the values [10, 20, 30, 40, 50], your function should
+    calculate and print the sum of the first three values, which is 60.
+Ans.function creation.... 
+    function creation.... 
+      
+        import pandas as pd
+        def sum_first_three(df):
+            # Get the first three values in the 'Values' column
+            values = df['Values'][:3]
+            # Calculate the sum of the first three values
+            sum_first_three = sum(values)
+            # Print the sum to the console
+            print("Sum of the first three values in 'Values' column:", sum_first_three)
+                                       
+        df = pd.DataFrame({'Values': [10, 20, 30, 40, 50]})
+        print(sum_first_three(df))
+                                       
+
+Q4. Given a Pandas DataFrame df with a column 'Text', write a Python function to create a new column
+   'Word_Count' that contains the number of words in each row of the 'Text' column.
+Ans. 
+    import pandas as pd
+
+    def add_word_count(df):
+    # Split the 'Text' column by spaces and count the number of words in each row
+        word_count = df['Text'].str.split().str.len()
+    # Add the new 'Word_Count' column to the DataFrame
+        df['Word_Count'] = word_count
+    # Return the updated DataFrame
+        return df
+   
+    df = pd.DataFrame({'Text': ['This is a sentence', 'Another sentence with more words']})
+    df = add_word_count(df)
+    print(df) 
+                                       
+                                       
+                                       
+Q5. How are DataFrame.size() and DataFrame.shape() different?
+Ans. DataFrame.size returns the total number of elements in the DataFrame, which is equal to the number of rows multiplied by the number of columns.
+     DataFrame.shape returns a tuple containing the number of rows and columns in the DataFrame. 
+    Example:-
+            import pandas as pd
+            df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+            print(df.size)
+            print(df.shape)
+                                       
+                                       
+Q6. Which function of pandas do we use to read an excel file?
+Ans. To read an Excel file in pandas, we can use the read_excel() function provided by pandas.
+    Example:-
+           import pandas as pd
+           # Read an Excel file named 'data.xlsx' from the current directory
+           df = pd.read_excel('data.xlsx')
+           # Print the first 5 rows of the DataFrame
+           print(df.head())                            
+                                       
+                                       
+Q7. You have a Pandas DataFrame df that contains a column named 'Email' that contains email
+    addresses in the format 'username@domain.com'. Write a Python function that creates a new column
+    'Username' in df that contains only the username part of each email address.
+    The username is the part of the email address that appears before the '@' symbol. For example, if the
+    email address is 'john.doe@example.com', the 'Username' column should contain 'john.doe'. Your
+    function should extract the username from each email address and store it in the new 'Username'
+    column.
+Ans. Creation of column....
+        import pandas as pd
+        def add_username(df):
+            # Extract the username part from each email address in the 'Email' column
+            usernames = df['Email'].str.split('@').str[0]
+            # Add the new 'Username' column to the DataFrame
+            df['Username'] = usernames
+            # Return the updated DataFrame
+            return df
+Example:-
+       df = pd.DataFrame({'Email': ['john.doe@example.com', 'jane.doe@example.com']})
+       df = add_username(df)
+       print(df)                                   
+                 
+                                       
+Q8. You have a Pandas DataFrame df with columns 'A', 'B', and 'C'. Write a Python function that selects
+    all rows where the value in column 'A' is greater than 5 and the value in column 'B' is less than 10. The
+    function should return a new DataFrame that contains only the selected rows.
+    For example, if df contains the following values:
+      A B C
+    0 3 5 1
+    1 8 2 7
+    2 6 9 4
+    3 2 3 5
+    4 9 1 2
+Ans.Python function according to question are...
+        import pandas as pd
+        def select_rows(df):
+            # Select all rows where the value in column 'A' is greater than 5 and the value in column 'B' is less than 10
+            selected_rows = df[(df['A'] > 5) & (df['B'] < 10)]
+            # Return the new DataFrame that contains only the selected rows
+            return selected_rows
+Example:-                                       
+        df = pd.DataFrame({'A': [3, 8, 6, 2, 9], 'B': [5, 2, 9, 3, 1], 'C': [1, 7, 4, 5, 2]})
+        selected_df = select_rows(df)
+        print(selected_df) 
