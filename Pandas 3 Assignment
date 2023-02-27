@@ -1,0 +1,278 @@
+ Consider following code to answer further questions:
+    import pandas as pd
+    course_name = [‘Data Science’, ‘Machine Learning’, ‘Big Data’, ‘Data Engineer’]
+    duration = [2,3,6,4]
+    df = pd.DataFrame(data = {‘course_name’ : course_name, ‘duration’ : duration})
+
+Q1. Write a code to print the data present in the second row of the dataframe, df.
+Ans. 
+    import pandas as pd
+
+    course_name = ['Data Science', 'Machine Learning', 'Big Data', 'Data Engineer']
+    duration = [2,3,6,4]
+
+    df = pd.DataFrame(data = {'course_name': course_name, 'duration': duration})
+    # Accessing data in second row using .iloc
+    second_row_data = df.iloc[1]
+
+    print("Data in the second row of the dataframe:")
+    print(second_row_data)
+    
+
+Q2. What is the difference between the functions loc and iloc in pandas.DataFrame?
+Ans. In Pandas DataFrame, loc and iloc are two indexing operators that allow us to access data from a DataFrame. The main difference
+     between the two operators is that loc uses labels or indices to access data, whereas iloc uses integer positions or index locations 
+     to access data.
+        1.loc uses labels or indices, while iloc uses integer positions.
+        2.loc is used to select data based on label-based indexing, and iloc is used to select data based on integer indexing.
+        3.loc allows the use of boolean arrays, callable functions, or slices to access data, whereas iloc only allows integer-based indexing.
+    Example:-
+             import pandas as pd
+             # Creating a DataFrame
+             df = pd.DataFrame({'A': [1, 2, 3, 4], 'B': [5, 6, 7, 8]}, index=['a', 'b', 'c', 'd'])
+             # Accessing data using loc
+             print(df.loc['a':'c', 'A'])
+             # Accessing data using iloc
+             print(df.iloc[0:3, 0]) 
+        
+        
+Q3. Reindex the given dataframe using a variable, reindex = [3,0,1,2] and store it in the variable, new_df
+    then find the output for both new_df.loc[2] and new_df.iloc[2].
+Ans. 
+    import pandas as pd
+    course_name = ['Data Science', 'Machine Learning', 'Big Data', 'Data Engineer']
+    duration = [2,3,6,4]
+    df = pd.DataFrame(data = {'course_name': course_name, 'duration': duration})
+
+    # Reindexing the DataFrame
+    reindex = [3, 0, 1, 2]
+    new_df = df.reindex(reindex)
+    # Accessing data using loc
+    print(new_df.loc[2])
+    # Accessing data using iloc
+    print(new_df.iloc[2])
+    
+
+Q4. Write a code to find the following statistical measurements for the above dataframe df1:
+    (i) mean of each and every column present in the dataframe.
+    (ii) standard deviation of column, ‘column_2’
+Ans.    
+    import pandas as pd
+    course_name = ['Data Science', 'Machine Learning', 'Big Data', 'Data Engineer']
+    duration = [2,3,6,4]
+    df = pd.DataFrame(data = {'course_name': course_name, 'duration': duration})
+
+    (i) Find mean of each column
+    print(df.mean()) 
+    
+    (ii) Find standard deviation of 'duration' column
+    print(df['duration'].std())   
+    
+    
+Q5. Replace the data present in the second row of column, ‘column_2’ by a string variable then find the
+    mean of column, column_2.
+    If you are getting errors in executing it then explain why.
+    [Hint: To replace the data use df1.loc[] and equate this to string data of your choice.]
+Ans.
+    import pandas as pd
+    # Given DataFrame
+    course_name = ['Data Science', 'Machine Learning', 'Big Data', 'Data Engineer']
+    duration = [2, 3, 6, 4]
+    df1 = pd.DataFrame(data = {'course_name': course_name, 'duration': duration})
+    # Replace data in the second row of 'duration' column
+    df1.loc[1, 'duration'] = 'replaced string'
+
+    This will result in a TypeError because one of the values in the 'duration' column is now a string
+
+    print(df1['duration'].mean())
+    
+    
+    
+Q6. What do you understand about the windows function in pandas and list the types of windows
+    functions?
+Ans. In pandas, a window function is a type of function that operates on a set of data points, known as a "window", and produces a single value 
+    as output. These functions are typically used for data analysis and are commonly used to compute rolling statistics, such as rolling mean or 
+    rolling standard deviation
+      Types of windows functions...  
+        1. Rolling Window Functions: These functions operate on a rolling window of a fixed size and calculate a statistic over the data within the window.
+           Examples are rolling_mean(), rolling_sum(), rolling_std(), rolling_median(), rolling_min(), rolling_max() .
+        2. Grouped Window Functions: These functions operate on a window of data that is defined by a grouping variable, such as a categorical variable. 
+           Examples include rolling().apply().
+            
+    Example:-   import pandas as pd
+                df = pd.DataFrame({'a' : [3,4,6,7,9,5,6,8,3,4]})
+              
+                # rolling_mean()
+                print(df['a'].rolling(window=2).mean())
+                # rolling_sum()
+                print(df['a'].rolling(window=2).sum())
+                # rolling_std()
+                print(df['a'].rolling(window=2).std())
+                # rolling_median()
+                print(df['a'].rolling(window=2).median())
+                # rolling_min()
+                print(df['a'].rolling(window).min())
+                # rolling_max()
+                print(df['a'].rolling(window).max())
+                
+                # rolling().apply()
+                print(df['a'].rolling(window=2).apply(sum))
+                
+                
+Q7. Write a code to print only the current month and year at the time of answering this question.
+    [Hint: Use pandas.datetime function]
+Ans. 
+    import pandas as pd
+    # get the current timestamp
+    current_time = pd.Timestamp.now()
+    # extract the month and year from the timestamp
+    current_month = current_time.month_name()
+    current_year = current_time.year
+    # print the current month and year
+    print(current_month, current_year)
+    
+
+Q8. Write a Python program that takes in two dates as input (in the format YYYY-MM-DD) and
+    calculates the difference between them in days, hours, and minutes using Pandas time delta. The
+    program should prompt the user to enter the dates and display the result.
+    Did you observe any difference in both the outputs? If so then explain it.
+    Consider the below code to answer further questions:
+    import pandas as pd
+    import numpy as np
+    columns = ['column_1', 'column_2', 'column_3', 'column_4', 'column_5', 'column_6']
+    indices = [1,2,3,4,5,6]
+    #Creating a dataframe:
+    df1 = pd.DataFrame(np.random.rand(6,6), columns = columns, index = indices)
+Ans.
+    Python program takes two dates as input.......
+        import pandas as pd
+        # get the input dates from the user
+        date1 = input("Enter the first date (YYYY-MM-DD): ")
+        date2 = input("Enter the second date (YYYY-MM-DD): ")
+        # convert the input dates to Pandas Timestamp objects
+        date1 = pd.Timestamp(date1)
+        date2 = pd.Timestamp(date2)
+        # calculate the time difference using Pandas time delta
+        time_diff = date2 - date1
+        # extract the days, hours, and minutes from the time difference
+        days = time_diff.days
+        hours = time_diff.seconds // 3600
+        minutes = (time_diff.seconds % 3600) // 60
+        # display the result
+        print("The time difference is {} days, {} hours, and {} minutes.".format(days, hours, minutes))
+    
+    Creating DataFrame......
+        import pandas as pd
+        import numpy as np
+        columns = ['column_1', 'column_2', 'column_3', 'column_4', 'column_5', 'column_6']
+        indices = [1,2,3,4,5,6]
+        #Creating a dataframe:
+        df1 = pd.DataFrame(np.random.rand(6,6), columns = columns, index = indices)
+        print(df1)               
+              
+        This code creates a DataFrame with 6 rows and 6 columns, where each element of the DataFrame
+        is a random float between 0 and 1. The column names are specified by the "columns" list, and 
+        the row indices are specified by the "indices" list.
+
+
+Q9. Write a Python program that reads a CSV file containing categorical data and converts a specified
+    column to a categorical data type. The program should prompt the user to enter the file path, column
+    name, and category order, and then display the sorted data.
+Ans. 
+    import pandas as pd
+   # user to enter file path, column name and category order
+    file_path = input("Enter file path: ")
+    column_name = input("Enter column name: ")
+    category_order = input("Enter category order (comma-separated): ").split(",")
+
+   # Read CSV file into a pandas DataFrame
+    df = pd.read_csv(file_path)
+   # Convert specified column to categorical data type
+    df[column_name] = pd.Categorical(df[column_name], categories=category_order, ordered=True)
+   # Sort data based on category order
+    df_sorted = df.sort_values(by=column_name)
+   # Display sorted data
+    print(df_sorted)
+    
+
+Q10. Write a Python program that reads a CSV file containing sales data for different products and
+    visualizes the data using a stacked bar chart to show the sales of each product category over time. The
+    program should prompt the user to enter the file path and display the chart.
+Ans. 
+    import pandas as pd
+    import matplotlib.pyplot as plt
+
+    # Prompt user for file path
+    file_path = input("Enter the file path of the CSV file: ")
+
+    # Load CSV data into a pandas DataFrame
+    df = pd.read_csv(file_path)
+
+    # Group data by product category and sum the sales
+    grouped = df.groupby(['Product Category', 'Year']).sum()['Sales']
+
+    # Create a stacked bar chart
+    grouped.unstack(level=0).plot(kind='bar', stacked=True)
+
+    # Set chart properties
+    plt.title('Sales by Product Category')
+    plt.xlabel('Year')
+    plt.ylabel('Sales')
+    plt.legend(title='Product Category')
+
+    # Display chart
+    plt.show()
+    
+    
+Q11. You are given a CSV file containing student data that includes the student ID and their test score. Write
+     a Python program that reads the CSV file, calculates the mean, median, and mode of the test scores, and
+     displays the results in a table.
+    The program should do the followingM
+    I Prompt the user to enter the file path of the CSV file containing the student dataR
+    I Read the CSV file into a Pandas DataFrameR
+    I Calculate the mean, median, and mode of the test scores using Pandas toolsR
+    I Display the mean, median, and mode in a table.
+    Assume the CSV file contains the following columnsM
+    I Student ID: The ID of the studentR
+    I Test Score: The score of the student's test.
+    Example usage of the program:
+    Enter the file path of the CSV file containing the student data: student_data.csv
+    +-----------+--------+
+    | Statistic | Value |
+    +-----------+--------+
+    | Mean | 79.6 |
+    | Median | 82 |
+    | Mode | 85, 90 |
+    +-----------+--------+
+    Assume that the CSV file student_data.csv contains the following data:
+    Student ID,Test Score
+    1,85
+    2,90
+    3,80
+    4,75
+    5,85
+    6,82
+    7,78
+    8,85
+    9,90
+    10,85
+    The program should calculate the mean, median, and mode of the test scores and display the results
+    in a table.
+Ans. 
+    import pandas as pd
+    # Read CSV file into a pandas DataFrame
+    df = pd.read_csv('student_data.csv')
+
+    # Calculate mean, median, and mode of test scores
+    mean_score = df['Test Score'].mean()
+    median_score = df['Test Score'].median()
+    mode_score = df['Test Score'].mode().tolist()
+
+    # Display results in a table
+    print("+-----------+--------+")
+    print("| Statistic | Value  |")
+    print("+-----------+--------+")
+    print(f"| Mean      | {mean_score}   |")
+    print(f"| Median    | {median_score}   |")
+    print(f"| Mode      | {', '.join(map(str, mode_score))} |")
+    print("+-----------+--------+")
