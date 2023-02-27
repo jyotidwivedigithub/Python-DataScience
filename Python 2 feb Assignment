@@ -1,0 +1,129 @@
+Q1. Explain with an example each when to use a for loop and a while loop.
+Ans. For Loop:- The for loop is used to run a block of code for a certain number of times. It is used to iterate over any 
+                sequences such as list, tuple, string, etc.
+           names = ["sita","meera","kiara"]
+           for name in names:
+                print(name)
+                
+    While Loop:-While Loop is used to execute a block of statements repeatedly until a given condition is satisfied.
+           a=1
+           while a <= 10:
+                print(a)
+                a=a+1
+       
+        
+Q2. Write a python program to print the sum and product of the first 10 natural numbers using for
+    and while loop.
+Ans. Using For Loop:-
+                  # Sum of first 10 natural numbers using for loop
+                    sum = 0
+                    for i in range(1, 11):
+                    sum += i
+                    print("Sum of first 10 natural numbers is:", sum)
+
+                 # Product of first 10 natural numbers using for loop
+                    product = 1
+                    for i in range(1, 11):
+                    product *= i
+                    print("Product of first 10 natural numbers is:", product)
+                    
+    Using While Loop:-
+               # Sum of first 10 natural numbers using while loop
+                    sum = 0
+                    i = 1
+                    while i <= 10:
+                        sum += i
+                        i += 1
+                    print("Sum of first 10 natural numbers is:", sum)
+
+              # Product of first 10 natural numbers using while loop
+                    product = 1
+                    i = 1
+                    while i <= 10:
+                        product *= i
+                        i += 1
+                    print("Product of first 10 natural numbers is:", product) 
+    
+    
+    
+Q3. Create a python program to compute the electricity bill for a household.
+Ans. 
+    units = int(input("Enter the number of units consumed: "))
+
+  # Calculate the electricity bill based on the number of units consumed
+    if units <= 100:
+        bill_amount = units * 4.5
+    elif units <= 200:
+        bill_amount = 100 * 4.5 + (units - 100) * 6
+    elif units <= 300:
+        bill_amount = 100 * 4.5 + 100 * 6 + (units - 200) * 10
+    else:
+        bill_amount = 100 * 4.5 + 100 * 6 + 100 * 10 + (units - 300) * 20
+
+
+    print("Electricity bill amount: Rs.", bill_amount)
+
+    
+    
+Q4. Create a list of numbers from 1 to 100. Use for loop and while loop to calculate the cube of each
+    number and if the cube of that number is divisible by 4 or 5 then append that number in a list and print
+    that list.
+    The per-unit charges in rupees are as follows: For the first 100 units, the user will be charged Rs. 4.5 per
+    unit, for the next 100 units, the user will be charged Rs. 6 per unit, and for the next 100 units, the user will
+    be charged Rs. 10 per unit, After 300 units and above the user will be charged Rs. 20 per unit.
+    You are required to take the units of electricity consumed in a month from the user as input.
+    Your program must pass this test case: when the unit of electricity consumed by the user in a month is
+    310, the total electricity bill should be 2250.
+Ans.
+    # Create a list of numbers from 1 to 100
+    numbers = list(range(1, 101))
+
+    # Use a for loop to calculate the cube of each number
+    cubes = []
+    for num in numbers:
+        cube = num ** 3
+        if cube % 4 == 0 or cube % 5 == 0:
+            cubes.append(num)
+
+    # Print the list of numbers whose cubes are divisible by 4 or 5
+    print("Numbers whose cubes are divisible by 4 or 5:", cubes)
+    
+    
+
+   # Take input from the user for the number of units consumed
+   units = int(input("Enter the number of units consumed: "))
+
+  # Calculate the electricity bill based on the number of units consumed
+    if units <= 100:
+        bill_amount = units * 4.5
+    elif units <= 200:
+        bill_amount = 100 * 4.5 + (units - 100) * 6
+    elif units <= 300:
+        bill_amount = 100 * 4.5 + 100 * 6 + (units - 200) * 10
+    else:
+        bill_amount = 100 * 4.5 + 100 * 6 + 100 * 10 + (units - 300) * 20
+
+
+    print("Electricity bill amount: Rs.", bill_amount)
+
+    
+    
+Q5. Write a program to filter count vowels in the below-given string.
+    string = "I want to become a data scientist"
+Ans.
+   string = "I want to become a data scientist"
+
+   # Define a function to count vowels
+   def count_vowels(s):
+        vowels = "aeiouAEIOU"
+        count = 0
+        for char in s:
+            if char in vowels:
+                count += 1
+        return count
+
+  # Filter and count vowels in the input string
+  num_vowels = count_vowels(string)
+
+  # Display the result
+  print("The number of vowels in the string is:", num_vowels)
