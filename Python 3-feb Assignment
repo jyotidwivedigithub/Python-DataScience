@@ -1,0 +1,115 @@
+Q1. Which keyword is used to create a function? Create a function to return a list of odd numbers in the
+    range of 1 to 25.
+Ans. 'def' keyword is used to create a function in python.
+     Example:- 
+        def odd_numbers():
+            odd_nums = []
+            for num in range(1,26):
+                if num % 2 != 0:
+                    odd_nums.append(num)
+            return odd_nums
+        print(odd_numbers())
+            
+            
+Q2. Why *args and **kwargs is used in some functions? Create a function each for *args and **kwargs
+    to demonstrate their use.
+Ans. 
+     *args- *args is used to pass a variable number of non-keyword arguments (i.e., positional arguments) to a function. 
+            It allows you to pass any number of arguments to a function, separated by commas, and the function will receive them as a tuple.  
+         Example:-
+                 def name(*name):                                          
+                     print("Hello,", name[0], name[2], name[2])
+                 name("om", "kumar", "dwivedi")
+
+     **kwargs- **kwargs is used to pass a variable number of keyword arguments (i.e., named arguments) to a function. It allows you to pass 
+               any number of keyword arguments to a function, and the function will receive them as a dictionary. Here's an example:
+        Example:-
+                def name(**name):                                        
+                    print("Hello,", name["fname"], name["mname"], name["lname"])
+                name(fname= "Raj", lname= "Dwived", mname= "Kumar")
+
+                
+Q3. What is an iterator in python? Name the method used to initialise the iterator object and the method
+    used for iteration. Use these methods to print the first five elements of the given list [2, 4, 6, 8, 10, 12, 14,
+    16, 18, 20].
+Ans. In Python, an iterator is an object that can be iterated upon. This means that you can traverse through all the values in the object.
+     The iter() method is used to create the iterator over the iterable object. It returns an iterator for the object you give it.
+    Exaple:-
+            list = [2, 4, 6, 8, 10, 12, 14,16, 18, 20]
+            iterator = iter(list)
+            for i in range(5):
+                print(next(iterator))
+
+
+Q4. What is a generator function in python? Why yield keyword is used? Give an example of a generator
+    function.
+Ans. Generator function is use  to generate a sequence of values without having to store them all in memory at once. This can be very useful
+     when working with large datasets .   
+     yield keyword is use to suspend the function's execution and return each value one at a time. 
+        Example:-
+                 def even_numbers(n):
+                   for i in range(n):
+                        if i % 2 == 0:
+                            yield i
+
+                for num in even_numbers(10):
+                    print(num)
+                    
+                    
+Q5. Create a generator function for prime numbers less than 1000. Use the next() method to print the
+    first 20 prime numbers.
+Ans. def primes():
+        n = 1000
+        is_prime = [True] * (n + 1)
+        is_prime[0] = is_prime[1] = False
+        for i in range(2, n):
+            if is_prime[i]:
+                yield i
+            
+    prime_generator = primes()
+
+    for i in range(20):
+        print(next(prime_generator))
+        
+
+Q6. Write a python program to print the first 10 Fibonacci numbers using a while loop.
+Ans.   a, b = 0, 1
+       count = 0
+
+       while count < 10:
+            print(a)
+            a, b = b, a + b
+            count += 1
+
+            
+Q7. Write a List Comprehension to iterate through the given string: ‘pwskills’.
+    Expected output: ['p', 'w', 's', 'k', 'i', 'l', 'l', 's']
+Ans. 
+        s = 'pwskills'
+        n = [char for char in 'pwskills']
+        print(n)
+
+
+Q8. Write a python program to check whether a given number is Palindrome or not using a while loop.
+Ans.    num = int(input("Enter a number: "))
+        temp = num
+        reverse = 0
+
+        while temp > 0:
+            digit = temp % 10
+            reverse = reverse * 10 + digit
+            temp //= 10
+
+        if num == reverse:
+            print(num, "is a palindrome number")
+        else:
+            print(num, "is not a palindrome number")
+            
+     
+Q9. Write a code to print odd numbers from 1 to 100 using list comprehension.
+    Note: Use a list comprehension to create a list from 1 to 100 and use another List comprehension to filter
+    out odd numbers.
+Ans. 
+    odd_numbers = [num for num in range(1, 101) if num % 2 != 0]
+    print(odd_numbers)
+    
