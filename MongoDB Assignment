@@ -1,0 +1,126 @@
+Q1. What is MongoDB? Explain non-relational databases in short. In which scenarios it is preferred to use
+    MongoDB over SQL databases?
+Ans. MongoDB- MongoDB is a popular NoSQL document-oriented database that stores data in JSON-like documents.
+
+    Non-relational database- Non-relational databases, also known as NoSQL databases, are databases that do 
+        not use the traditional relational database management system model. Non-relational databases store 
+        data in flexible formats, such as key-value pairs, documents, or graphs, which allows for easier scaling 
+        and handling of unstructured or semi-structured data.
+        
+    MongoDB is preferred over SQL databases in scenarios where the data is unstructured, has varying or unknown 
+    schema, and where performance is a critical requirement. For example, MongoDB is commonly used in industries 
+    such as e-commerce, social media, and healthcare, where the data is constantly changing and requires fast access 
+    to large amounts of data.
+    
+    
+Q2. State and Explain the features of MongoDB.
+Ans. Features of MongoDB- 
+        1.Document-oriented storage: MongoDB stores data in flexible and dynamic JSON-like documents, which allows developers 
+          to store data in a way that best suits their application's needs.
+        2.Flexible schema: MongoDB does not enforce a fixed schema like traditional SQL databases, which makes it easier to work
+          with unstructured data.
+        3.High availability: MongoDB provides automatic replication and failover, which ensures that the data is always available 
+          and that there is no single point of failure.
+        4.Scalability: MongoDB can easily scale horizontally by adding more nodes to a cluster, which makes it ideal for handling 
+          large volumes of data.
+        5.Indexing: MongoDB supports indexing on any field, which makes querying the database faster and more efficient.
+
+        
+Q3. Write a code to connect MongoDB to Python. Also, create a database and a collection in MongoDB.
+Ans.
+    import pymongo
+    
+    # Connect mongodb to python.
+    client = pymongo.MongoClient("mongodb://localhost:27017/labDB")
+
+    # Database Creation
+    dataBase = client["mydatabase"]
+
+    # Collection  Creation
+    collection = dataBase['mycollection']
+
+    
+Q4. Using the database and the collection created in question number 3, write a code to insert one record,
+    and insert many records. Use the find() and find_one() methods to print the inserted record.
+Ans.     
+    import pymongo
+    
+    # Connect mongodb to python.
+    client = pymongo.MongoClient("mongodb://localhost:27017/labDB")
+
+    # Database Creation
+    dataBase = client["mydatabase"]
+
+    # Collection  Creation
+    collection = dataBase['mycollection']
+
+    # Insert above records in the collection
+    d = {"name": "John", "age": 35}
+    rec = collection.insert_one(d)
+    print(rec.inserted_id)
+    
+    # Find one record
+    x = collection.find_one()
+    print(x)
+    
+    # Find all records
+    y = collection.find():
+    print(y)
+ 
+    
+Q5. Explain how you can use the find() method to query the MongoDB database. Write a simple code to
+    demonstrate this.
+Ans. The find() method with no parameters returns all documents from a collection and returns all fields for the documents.
+
+    import pymongo
+    
+    # Connect mongodb to python.
+    client = pymongo.MongoClient("mongodb://localhost:27017/labDB")
+
+    # Database Creation
+    dataBase = client["mydatabase"]
+
+    # Collection  Creation
+    collection = dataBase['mycollection']
+    
+    # Find record
+    x = collection.find()
+    print(x)
+    
+    
+Q6. Explain the sort() method. Give an example to demonstrate sorting in MongoDB.
+Ans. The sort() method is used in MongoDB to sort the documents in a collection based on one or more fields.
+
+    import pymongo
+    
+    # Connect mongodb to python.
+    client = pymongo.MongoClient("mongodb://localhost:27017/labDB")
+
+    # Database Creation
+    dataBase = client["mydatabase"]
+
+    # Collection  Creation
+    collection = dataBase['mycollection']
+
+    # Insert above records in the collection
+    d = {"name": "John", "age": 35,
+         "name": "zoya",  "age": 30}
+    rec = collection.insert_many(d)
+    print(rec.inserted_id)
+    
+    # sorting document
+    x = collection.find().sort("name")
+    print(x)
+    
+    
+Q7. Explain why delete_one(), delete_many(), and drop() is used.
+Ans. 
+    The delete_one(), delete_many(), and drop() methods are used in MongoDB to remove documents or collections from a database.
+    
+    delete_one()- The delete_one() method is used to remove a single document that matches a specified set of criteria.
+    
+    delete_many()- The delete_many() method is used to remove multiple documents that match a specified set of criteria. 
+    
+    drop()- The drop() method is used to remove an entire collection from a database.
+    
+    
