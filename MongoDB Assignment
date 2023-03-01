@@ -64,8 +64,8 @@ Ans.
     print(x)
     
     # Find all records
-    y = collection.find():
-    print(y)
+    for x in collection.find():
+        print(x)
  
     
 Q5. Explain how you can use the find() method to query the MongoDB database. Write a simple code to
@@ -84,8 +84,8 @@ Ans. The find() method with no parameters returns all documents from a collectio
     collection = dataBase['mycollection']
     
     # Find record
-    x = collection.find()
-    print(x)
+    for x in collection.find()
+        print(x)
     
     
 Q6. Explain the sort() method. Give an example to demonstrate sorting in MongoDB.
@@ -110,7 +110,8 @@ Ans. The sort() method is used in MongoDB to sort the documents in a collection 
     
     # sorting document
     x = collection.find().sort("name")
-    print(x)
+    for document in x:
+        print(document)
     
     
 Q7. Explain why delete_one(), delete_many(), and drop() is used.
