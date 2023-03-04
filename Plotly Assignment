@@ -1,0 +1,56 @@
+Q1. Load the "titanic" dataset using the load_dataset function of seaborn. Use Plotly express to plot a
+    scatter plot for age and fare columns in the titanic dataset.
+Ans.
+    import seaborn as sns
+    import plotly.express as px
+    titanic = sns.load_dataset("titanic")
+    fig = px.scatter(titanic, x="age", y="fare")
+    fig.show()
+     
+        
+Q2. Using the tips dataset in the Plotly library, plot a box plot using Plotly express.
+Ans.
+    import plotly.express as px
+    tips = px.data.tips()
+    fig = px.box(tips, x="day", y="total_bill")
+    fig.show() 
+
+    
+Q3. Using the tips dataset in the Plotly library, Plot a histogram for x= "sex" and y="total_bill" column in
+    the tips dataset. Also, use the "smoker" column with the pattern_shape parameter and the "day"
+    column with the color parameter.
+Ans.
+    import plotly.express as px
+    tips = px.data.tips()
+    # Create a histogram for total_bill column, grouped by sex
+    fig = px.histogram(tips, x="sex", y="total_bill", histfunc="sum", color="sex")
+    fig.show()
+    
+    
+    import plotly.express as px
+    tips = px.data.tips()
+    # Create a histogram for total_bill column, grouped by sex, with pattern_shape and color parameters
+    fig = px.histogram(tips, x="sex", y="total_bill", histfunc="sum", color="day", barmode="group",pattern_shape="smoker")
+    fig.show()
+    
+    
+Q4. Using the iris dataset in the Plotly library, Plot a scatter matrix plot, using the "species" column for
+    the color parameter.
+    Note: Use "sepal_length", "sepal_width", "petal_length", "petal_width" columns only with the
+    dimensions parameter.
+Ans.
+    import plotly.express as px
+    iris = px.data.iris()
+    fig = px.scatter_matrix(iris, dimensions=["sepal_length", "sepal_width", "petal_length", "petal_width"], color="species")
+    fig.show()
+    
+    
+Q5. What is Distplot? Using Plotly express, plot a distplot.
+Ans.
+   Distplot is a function that allows you to plot a univariate distribution of observations. The distribution can be shown as a histogram .
+
+    import plotly.graph_objects as go
+    x = [1,1,9,9,9,33,33,43,44,44,6,6,8,8,43,54,24,6,6,7,7,9,9,4]
+    fig = go.Figure(data = [go.Histogram(x = x)])
+    fig.show()
+    
